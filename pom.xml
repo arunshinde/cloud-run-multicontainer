@@ -92,6 +92,26 @@
 					</nonFilteredFileExtensions>
 			    </configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<executions>
+				<execution>
+					<id>clean-jar-artifacts</id>
+					<phase>install</phase>
+					<goals>
+						<goal>clean</goal>
+					</goals>
+					<configuration>
+						<excludeDefaultDirectories>true</excludeDefaultDirectories>
+						<filesets>
+							<fileset>
+							<directory>target/dependency/*.jar</directory>
+							</fileset>
+						</filesets>
+					</configuration>
+				</execution>
+				</executions>
+			</plugin>
         </plugins>
     </build>
 	<profiles>
